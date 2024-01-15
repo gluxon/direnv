@@ -293,9 +293,9 @@ func allow(path string, allowPath string) (err error) {
 
 func findEnvUp(searchDir string, loadDotenv bool) (path string) {
 	if loadDotenv {
-		return findUp(searchDir, ".envrc", ".env")
+		return findUp(searchDir, ".envrc", ".env", ".envrc.project")
 	}
-	return findUp(searchDir, ".envrc")
+	return findUp(searchDir, ".envrc", ".envrc.project")
 }
 
 func findUp(searchDir string, fileNames ...string) (path string) {
